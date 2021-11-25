@@ -7,7 +7,7 @@ from edx_django_utils.plugins import PluginSettings, PluginURLs, PluginContexts
 
 from openedx.core.constants import COURSE_ID_PATTERN
 from openedx.core.djangoapps.plugins.constants import ProjectType, SettingsType
-from ol_openedx_canvas_integration.constants import CANVAS_INTEGRATION_PLUGIN_VIEW_NAME
+from ol_openedx_canvas_integration.constants import INCTRUCTOR_DASHBOARD_PLUGIN_VIEW_NAME
 
 
 class CanvasIntegrationConfig(AppConfig):
@@ -32,7 +32,7 @@ class CanvasIntegrationConfig(AppConfig):
         },
         PluginContexts.CONFIG: {
             ProjectType.LMS: {
-                CANVAS_INTEGRATION_PLUGIN_VIEW_NAME: 'ol_openedx_canvas_integration.context_api.plugin_context'
+                INCTRUCTOR_DASHBOARD_PLUGIN_VIEW_NAME: 'ol_openedx_canvas_integration.context_api.plugin_context'
             }
         }
     }

@@ -6,7 +6,8 @@ from django.utils.translation import ugettext as _
 def plugin_context(context):
     course = context["course"]
     """ Provide data for the canvas dashboard section """
-    return {
+
+    canvas_intgeration_context = {
         'section_key': 'canvas_integration',
         'section_display_name': _('Canvas'),
         'course': course,
@@ -23,4 +24,8 @@ def plugin_context(context):
         "push_edx_grades_url": reverse(
             "push_edx_grades", kwargs={"course_id": course.id}
         ),
+        "template_path_prefix":"/"
     }
+    context["sections"].append(canvas_intgeration_context)
+
+    return context
