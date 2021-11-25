@@ -7,7 +7,7 @@ from edx_django_utils.plugins import PluginURLs, PluginContexts, PluginSettings
 
 from openedx.core.constants import COURSE_ID_PATTERN
 from openedx.core.djangoapps.plugins.constants import ProjectType, SettingsType
-from ol_openedx_rapid_response.constants import RAPID_RESPONSE_PLUGIN_VIEW_NAME
+from ol_openedx_rapid_response.constants import INCTRUCTOR_DASHBOARD_PLUGIN_VIEW_NAME
 
 
 class RapidResponsePluginConfig(AppConfig):
@@ -33,7 +33,7 @@ class RapidResponsePluginConfig(AppConfig):
         },
         PluginContexts.CONFIG: {
             ProjectType.LMS: {
-                RAPID_RESPONSE_PLUGIN_VIEW_NAME: 'ol_openedx_rapid_response.context_api.plugin_context'
+                INCTRUCTOR_DASHBOARD_PLUGIN_VIEW_NAME: 'ol_openedx_rapid_response.context_api.plugin_context'
             }
         }
     }
