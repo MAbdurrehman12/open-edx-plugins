@@ -1,5 +1,5 @@
 python_library(
-    name="canvas_integration",
+    name="canvas_plugin_settings",
     dependencies=["src/ol_openedx_canvas_integration/settings:canvas_settings"]
 )
 
@@ -17,7 +17,7 @@ resources(
 
 python_distribution(
     name="canvas_integration_package",
-    dependencies=[":canvas_integration", ":canvas_plugin_templates", ":canvas_plugin_js"],
+    dependencies=[":canvas_plugin_settings", ":canvas_plugin_templates", ":canvas_plugin_js"],
     provides=setup_py(
         name="ol-openedx-canvas-integration",
         version="0.1.0",

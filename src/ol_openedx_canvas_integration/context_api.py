@@ -4,8 +4,8 @@ from django.utils.translation import ugettext as _
 
 
 def plugin_context(context):
-    course = context["course"]
     """ Provide data for the canvas dashboard section """
+    course = context["course"]
 
     canvas_intgeration_context = {
         'section_key': 'canvas_integration',
