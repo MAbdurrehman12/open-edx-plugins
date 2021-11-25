@@ -1,5 +1,6 @@
 python_library(
-    name="rapid_response_plugin_dependencies",
+    name="rapid_response_settings",
+    dependencies=["src/ol_openedx_rapid_response/settings:rapid_response_settings"]
 )
 
 resources(
@@ -10,7 +11,7 @@ resources(
 
 python_distribution(
     name="rapid_response_plugin_dist",
-    dependencies=[":rapid_response_plugin_dependencies", ":rapid_reponse_plugin_templates"],
+    dependencies=[":rapid_response_settings", ":rapid_reponse_plugin_templates"],
     provides=setup_py(
         name="ol-openedx-rapid-response",
         version="0.1.0",
