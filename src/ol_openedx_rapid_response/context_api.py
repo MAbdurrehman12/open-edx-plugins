@@ -7,7 +7,12 @@ from opaque_keys.edx.keys import CourseKey
 # if section_key is changed then also change the name of html file 
 
 def plugin_context(context):
-    """ Provide data for the rapid responses dashboard section """
+    """ 
+    Provide data for the rapid responses dashboard section
+    section_key in canvas_intgeration_context is the name of html file in templates
+    if section_key is changed then also change the name of html file  
+    """
+    
     course = context.get("course", False)
     sections = context.get("sections", False)
     
