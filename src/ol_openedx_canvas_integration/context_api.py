@@ -5,7 +5,11 @@ from django.utils.translation import ugettext as _
 
 def plugin_context(context):
     """ Provide data for the canvas dashboard section """
-    course = context["course"]
+    course = context.get("course", False)
+    sections = context.get("sections", False)
+
+    if not (course and sections):
+        return context
 
     canvas_intgeration_context = {
         'section_key': 'canvas_integration',
@@ -26,6 +30,8 @@ def plugin_context(context):
         ),
         "template_path_prefix":"/"
     }
-    context["sections"].append(canvas_intgeration_context)
+
+    sections.append(canvas_intgeration_context)
+    context["sections"] = sections
 
     return context
