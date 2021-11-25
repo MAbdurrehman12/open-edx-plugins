@@ -1,1 +1,1 @@
-RAPID_RESPONSE_PLUGIN_VIEW_NAME = 'ol_openedx_rapid_response'
+INCTRUCTOR_DASHBOARD_PLUGIN_VIEW_NAME = "instructor_dashboard_plugin"

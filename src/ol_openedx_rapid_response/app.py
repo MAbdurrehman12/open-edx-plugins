@@ -3,7 +3,7 @@ ol_openedx_rapid_response Django application initialization.
 """
 
 from django.apps import AppConfig
-from edx_django_utils.plugins import PluginURLs, PluginContexts
+from edx_django_utils.plugins import PluginURLs, PluginContexts, PluginSettings
 
 from openedx.core.constants import COURSE_ID_PATTERN
 from openedx.core.djangoapps.plugins.constants import ProjectType, SettingsType
@@ -23,6 +23,12 @@ class RapidResponsePluginConfig(AppConfig):
                 PluginURLs.NAMESPACE: '',
                 PluginURLs.REGEX: 'courses/{}/instructor/api/'.format(COURSE_ID_PATTERN),
                 PluginURLs.RELATIVE_PATH: 'urls',
+            }
+        },
+        PluginSettings.CONFIG: {
+            ProjectType.LMS: {
+                SettingsType.PRODUCTION: {PluginSettings.RELATIVE_PATH: 'settings.production'},
+                SettingsType.COMMON: {PluginSettings.RELATIVE_PATH: 'settings.common'},
             }
         },
         PluginContexts.CONFIG: {
