@@ -1,16 +1,26 @@
 
 from django.urls import reverse
 from django.utils.translation import ugettext as _
+from web_fragments.fragment import Fragment
+from django.contrib.staticfiles.storage import staticfiles_storage
 
 
 def plugin_context(context):
-    """ Provide data for the canvas dashboard section """
+    """ 
+    Provide data for the canvas dashboard section
+    section_key in canvas_intgeration_context is the name of html file in templates
+    if section_key is changed then also change the name of html file 
+    """
+
     course = context.get("course", False)
     sections = context.get("sections", False)
 
     if not (course and sections):
         return context
 
+    fragment = Fragment()
+    fragment.add_javascript_url(staticfiles_storage.url('/js/canvas_integration.js'))
+    
     canvas_intgeration_context = {
         'section_key': 'canvas_integration',
         'section_display_name': _('Canvas'),
@@ -28,6 +38,7 @@ def plugin_context(context):
         "push_edx_grades_url": reverse(
             "push_edx_grades", kwargs={"course_id": course.id}
         ),
+        "fragment": fragment,
         "template_path_prefix":"/"
     }
 
