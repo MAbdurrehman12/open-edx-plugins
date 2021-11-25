@@ -2,9 +2,6 @@ from django.utils.translation import ugettext as _
 from rapid_response_xblock.utils import get_run_data_for_course
 from opaque_keys.edx.keys import CourseKey
 
-    
-# section_key context is the name of html file in templates
-# if section_key is changed then also change the name of html file 
 
 def plugin_context(context):
     """ 
