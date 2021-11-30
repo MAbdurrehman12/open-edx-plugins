@@ -1,1 +1,1 @@
-INCTRUCTOR_DASHBOARD_PLUGIN_VIEW_NAME = "instructor_dashboard_plugin"
+INCTRUCTOR_DASHBOARD_PLUGIN_VIEW_NAME = "instructor"
