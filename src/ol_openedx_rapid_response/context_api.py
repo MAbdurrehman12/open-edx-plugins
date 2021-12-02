@@ -14,7 +14,7 @@ def plugin_context(context):
     sections = context.get("sections", False)
     
     if not (course and sections):
-        return context
+        return None
     
     course_key = course.id
 
